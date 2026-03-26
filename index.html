@@ -21,17 +21,13 @@
       --transition-flip: 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    html, body {
-      height: 100%;
-    }
-
     body {
-      min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 56px;
+      gap: 48px;
       padding: 40px 20px;
       background: linear-gradient(135deg, #0d0a14 0%, #1a0d2e 35%, #2d1040 60%, #1a0d1a 100%);
       font-family: 'Inter', sans-serif;
@@ -297,10 +293,28 @@
     /* ── Responsive ── */
     @media (max-width: 520px) {
       :root {
-        --card-w: 155px;
-        --card-h: 238px;
+        --card-w: 152px;
+        --card-h: 260px;
       }
-      .cards-container { gap: 16px; }
+      body { gap: 32px; padding: 28px 16px; }
+      .cards-container { gap: 14px; }
+      .card-front { gap: 7px; padding: 18px 14px; }
+      .card-front .verso-title { font-size: 0.95rem; }
+      .card-front .verso-body  { font-size: 0.78rem; line-height: 1.55; }
+      .card-back { gap: 10px; padding: 20px 16px; }
+      .card-back .card-emoji  { font-size: 2rem; }
+      .card-back .card-title  { font-size: 1.05rem; }
+      .card-back .card-desc   { font-size: 0.82rem; }
+    }
+
+    /* Très petits écrans (iPhone SE : 375px) */
+    @media (max-width: 390px) {
+      :root {
+        --card-w: 142px;
+        --card-h: 255px;
+      }
+      .cards-container { gap: 10px; }
+      .card-front .verso-body { font-size: 0.74rem; }
     }
   </style>
 </head>
